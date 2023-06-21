@@ -26,7 +26,7 @@ jobs:
       - name: Build and deploy to Azure Functions
         env:
           AZURE_FUNCTIONAPP_NAME: DataFunctionTest
-          AZURE_FUNCTIONAPP_PACKAGE_PATH: .
+          AZURE_FUNCTIONAPP_PACKAGE_PATH: function
         run: |
           pip install azure-functions
           az login --service-principal --username ${{ secrets.AZURE_SERVICE_PRINCIPAL_USERNAME }} --password ${{ secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD }} --tenant ${{ secrets.AZURE_SERVICE_PRINCIPAL_TENANT }}
